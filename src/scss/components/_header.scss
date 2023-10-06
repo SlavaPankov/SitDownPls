@@ -140,3 +140,136 @@ $navLinkOptions: (
     @include link($navLinkOptions);
   }
 }
+
+.bottom {
+  display: flex;
+  align-items: center;
+  padding-bottom: 32px;
+}
+
+.search-form {
+  max-width: 1061px;
+  width: 100%;
+  position: relative;
+
+  &__label {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+
+  &__loupe {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    fill: $grey
+  }
+
+  &__input {
+    @include base-input;
+    padding-left: 59px;
+  }
+
+  &__button {
+    @include btn-round;
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    transform: translateY(-50%);
+  }
+}
+
+.person-list {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  &__link {
+    position: relative;
+    display: flex;
+
+    & span {
+      display: flex;
+      position: relative;
+      z-index: 3;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: calc(100% + 6px);
+      height: calc(100% + 6px);
+      background-color: transparent;
+      transition: background-color .3s ease-in-out;
+    }
+
+    &:hover {
+      & .person-icon,
+      & .cart-icon {
+        fill: $primary_light;
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      &::after {
+        background-color: $primary;
+      }
+
+      & .person-icon,
+      & .cart-icon {
+        fill: $white;
+      }
+    }
+
+    &:active {
+      &::after {
+        background-color: transparent;
+      }
+
+      & .person-icon,
+      & .cart-icon {
+        fill: $primary_shade;
+      }
+    }
+  }
+}
+
+.person-icon {
+  width: 26px;
+  height: 28px;
+  fill: $primary;
+  transition: fill .3s ease-in-out;
+}
+
+.cart-icon {
+  width: 30px;
+  height: 28px;
+  fill: $primary;
+  transition: fill .3s ease-in-out;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+
+  &__count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5px 4px;
+    border-radius: 100%;
+    font-size: 10px;
+    line-height: 100%;
+    font-weight: 700;
+    color: $white;
+    background-color: $secondary;
+  }
+}
