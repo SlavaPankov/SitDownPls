@@ -1,0 +1,36 @@
+@mixin btn-secondary {
+  padding: 17.4px 35px;
+  border: 2px solid $primary;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 700;
+  color: $primary;
+  background-color: $white;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $primary_light;
+    border-color: $primary;
+    color: $white;
+  }
+
+  &:active {
+    border-color: $primary_shade;
+    background-color: $primary_shade;
+    color: $white;
+  }
+
+  &:disabled {
+    cursor: default;
+    border-color: $md_grey;
+    background-color: $md_grey;
+    color: $grey;
+  }
+}

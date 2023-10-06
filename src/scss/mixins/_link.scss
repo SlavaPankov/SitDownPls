@@ -1,0 +1,56 @@
+/* stylelint-disable value-keyword-case */
+@use "sass:map";
+
+@mixin link($options) {
+  position: relative;
+  font-size: #{map.get($options, fontSize)};
+  line-height: 100%;
+  font-weight: 400;
+  color: #{map.get($options, textColor)};
+  transition: color .3s ease-in-out;
+
+  & * {
+    position: relative;
+    z-index: 3;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -#{map.get($options, backgroundLeft)};
+    top: -#{map.get($options, backgroundTop)};
+    width: calc(100% + #{map.get($options, backgroundLeft)} * 2);
+    height: calc(100% + #{map.get($options, backgroundTop)} * 2);
+    background-color: transparent;
+    z-index: 2;
+    transition: background-color .3s ease-in-out;
+  }
+
+  &:hover {
+    color: #{map.get($options, hoverColor)};
+  }
+
+  &:focus {
+    outline: none;
+    color: #{map.get($options, focusColor)};
+
+    &::after {
+      background-color: #{map.get($options, afterColor)};
+    }
+  }
+
+  &:active {
+    color: #{map.get($options, activeColor)};
+  }
+}
+
+$options: (
+  fontSize: 16px,
+  textColor: $grey,
+  backgroundLeft: 10px,
+  backgroundTop: 1px,
+  hoverColor: $primary,
+  focusColor: $primary_shade,
+  afterColor: $pink_violet,
+  activeColor: $primary_shade,
+)

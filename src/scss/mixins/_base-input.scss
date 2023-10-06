@@ -1,0 +1,34 @@
+@mixin base-input {
+  width: 100%;
+  padding: 6.2px 32px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 40px;
+  font-weight: 400;
+  color: $black;
+  background-color: $grey_light;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 400;
+    color: $grey;
+  }
+
+  &:hover {
+    background-color: $md_grey;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    background-color: $pink_light;
+  }
+
+  &--active {
+    border-color: $green_input;
+    background-color: $grey_light;
+  }
+}

@@ -1,0 +1,53 @@
+.btn {
+  @include btn-primary;
+}
+
+.btn-sec {
+  @include btn-secondary;
+}
+
+$optionsPrimary: (
+  fontSize: 16px,
+  textColor: $black,
+  backgroundLeft: 10px,
+  backgroundTop: 1px,
+  hoverColor: $primary,
+  focusColor: $black,
+  afterColor: $pink_violet,
+  activeColor: $primary_shade,
+);
+
+.link {
+  @include link($optionsPrimary);
+}
+
+$optionsSecondary: (
+  fontSize: 14px,
+  textColor: $grey,
+  backgroundLeft: 10px,
+  backgroundTop: 1px,
+  hoverColor: $primary,
+  focusColor: $primary_shade,
+  afterColor: $pink_violet,
+  activeColor: $primary_shade,
+);
+
+.link-sec {
+  @include link($optionsSecondary);
+}
+
+.btn-round {
+  @include btn-round;
+}
+
+.link-round {
+  @include link-round;
+}
+
+.input {
+  @include base-input;
+}
+
+.custom-checkbox {
+  @include custom-checkbox;
+}
