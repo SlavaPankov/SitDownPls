@@ -1,27 +1,62 @@
-.btn {
-  @include btn-primary;
+.header {
+  &__top {
+    background-color: $grey_light;
+  }
 }
 
-.btn-sec {
-  @include btn-secondary;
-}
-
-$optionsPrimary: (
-  fontSize: 16px,
-  textColor: $black,
-  backgroundLeft: 10px,
-  backgroundTop: 1px,
-  hoverColor: $primary,
-  focusColor: $black,
-  afterColor: $pink_violet,
-  activeColor: $primary_shade,
+$options: (
+  fontSize: 14px,
+  textColor: $secondary,
+  backgroundLeft: 0px,
+  backgroundTop: 0px,
+  hoverColor: $secondary_light,
+  focusColor: $secondary,
+  afterColor: $bone,
+  activeColor: $secondary_shade,
 );
 
-.link {
-  @include link($optionsPrimary);
+.top-container {
+  display: flex;
+  align-items: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
-$optionsSecondary: (
+.phone-link {
+  @include link($options);
+
+  & span {
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    .phone-link__icon {
+      fill: $secondary_light;
+    }
+  }
+
+  &:focus {
+    .phone-link__icon {
+      fill: $secondary;
+    }
+  }
+
+  &:active {
+    .phone-link__icon {
+      fill: $secondary_shade;
+    }
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    fill: $secondary;
+    transition: fill .3s ease-in-out;
+  }
+}
+
+$topNavLinkOptions: (
   fontSize: 14px,
   textColor: $grey,
   backgroundLeft: 10px,
@@ -32,22 +67,19 @@ $optionsSecondary: (
   activeColor: $primary_shade,
 );
 
-.link-sec {
-  @include link($optionsSecondary);
-}
+.top-nav {
+  max-width: 710px;
+  width: 100%;
+  margin-left: auto;
 
-.btn-round {
-  @include btn-round;
-}
+  &__list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.link-round {
-  @include link-round;
-}
-
-.input {
-  @include base-input;
-}
-
-.custom-checkbox {
-  @include custom-checkbox;
+  &__link {
+    @include link($topNavLinkOptions);
+  }
 }
