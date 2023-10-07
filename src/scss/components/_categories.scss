@@ -1,0 +1,80 @@
+.categories {
+  &__container {
+    padding-top: 70px;
+    padding-bottom: 35px;
+  }
+
+  &__heading {
+    @include h2;
+    margin-bottom: 26px;
+  }
+}
+
+.categories-list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+
+  &__item {
+    grid-column: span 4;
+
+    &:nth-child(5n + 1) {
+      grid-column: span 6;
+    }
+
+    &:nth-child(5n + 2) {
+      grid-column: span 6;
+    }
+  }
+}
+
+.category-card {
+  padding: 28px 0 30px;
+  border-radius: 10px;
+  background-color: $grey_light;
+
+  &__heading {
+    padding-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    font-size: 24px;
+    line-height: normal;
+    font-weight: 400;
+    color: $black;
+  }
+
+  &__picture-link {
+    display: flex;
+    margin-bottom: 26px;
+  }
+
+  &__button {
+    padding-left: 30px;
+    @include link-round
+  }
+}
+
+$topNavLinkOptions: (
+  fontSize: 14px,
+  textColor: $grey,
+  backgroundLeft: 10px,
+  backgroundTop: 1px,
+  hoverColor: $primary,
+  focusColor: $primary_shade,
+  afterColor: $pink_violet,
+  activeColor: $primary_shade,
+);
+
+.subcategories {
+  margin-bottom: 14px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  &__link {
+    @include link($topNavLinkOptions);
+  }
+}
