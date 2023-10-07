@@ -1,0 +1,31 @@
+.commercial {
+  background: url('../../img/commercial-bg.jpg') center center no-repeat transparent;
+
+  &__container {
+    padding-top: 154px;
+    padding-bottom: 150px;
+  }
+
+  &__heading {
+    font-family: "PlayFair", "Open Sans", sans-serif;
+    font-size: 60px;
+    line-height: 120%;
+    font-weight: 900;
+    color: $gold;
+  }
+
+  &__subheading {
+    max-width: 508px;
+    margin-bottom: 49px;
+    font-size: 48px;
+    line-height: 120%;
+    font-weight: 400;
+    color: $white;
+  }
+
+  &__button {
+    @include btn-primary;
+    padding-left: 30.5px;
+    padding-right: 30.5px;
+  }
+}
