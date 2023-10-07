@@ -92,28 +92,6 @@ $topNavLinkOptions: (
   align-items: center;
 }
 
-.middle {
-  &__logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-}
-
-.logo {
-  &__elephant {
-    width: 37px;
-    height: 27px;
-    fill: $secondary;
-  }
-
-  &__spd {
-    width: 140px;
-    height: 17px;
-    fill: $primary;
-  }
-}
-
 $navLinkOptions: (
   fontSize: 16px,
   textColor: $black,

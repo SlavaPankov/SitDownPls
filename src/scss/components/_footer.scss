@@ -1,0 +1,161 @@
+.footer {
+  &__top {
+    background-color: $md_grey;
+  }
+
+  &__bottom {
+    background-color: $grey_light;
+  }
+
+  &__links {
+    padding-top: 5px;
+
+    &:not(:last-child) {
+      margin-right: 113.5px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 3px;
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: 400;
+    color: $black;
+  }
+}
+
+.footer-bottom {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4.5px;
+    padding-bottom: 6px;
+  }
+
+  &__copyright {
+    max-width: 118px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 400;
+    color: $grey;
+  }
+}
+
+
+.footer-top {
+  &__container {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+
+    & .logo {
+      margin-bottom: 31px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__link {
+    display: flex;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: calc(100% + 6px);
+      height: calc(100% + 6px);
+      background-color: transparent;
+      transition: background-color .3s ease-in-out;
+      z-index: 2;
+    }
+
+    &:hover {
+      & .social__icon {
+        fill: $primary;
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      &::after {
+        background-color: $primary_light;
+      }
+
+      & .social__icon {
+        fill: $white;
+      }
+    }
+
+    &:active {
+      &::after {
+        background-color: transparent;
+      }
+
+      & .social__icon {
+        fill: $primary_shade;
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    fill: $grey;
+    transition: fill .3s ease-in-out;
+    z-index: 3;
+  }
+}
+
+$topNavLinkOptions: (
+  fontSize: 14px,
+  textColor: $grey,
+  backgroundLeft: 10px,
+  backgroundTop: 1px,
+  hoverColor: $primary,
+  focusColor: $primary_shade,
+  afterColor: $pink_violet,
+  activeColor: $primary_shade,
+);
+
+.footer-list {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 5.5px;
+    }
+  }
+
+  &__link {
+    @include link($topNavLinkOptions);
+  }
+}
+
+.connection {
+  min-width: 141px;
+}
+
+.services {
+  min-width: 152px;
+}

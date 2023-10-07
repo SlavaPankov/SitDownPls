@@ -106,3 +106,21 @@ a {
 .page--ios .dis-scroll {
   position: relative;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__elephant {
+    width: 37px;
+    height: 27px;
+    fill: $secondary;
+  }
+
+  &__spd {
+    width: 140px;
+    height: 17px;
+    fill: $primary;
+  }
+}
