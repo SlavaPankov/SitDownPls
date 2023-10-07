@@ -1,0 +1,51 @@
+.useful {
+  &__container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  &__heading {
+    @include h2;
+    margin-bottom: 26px;
+  }
+}
+
+.useful-list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+
+  &__item {
+    grid-column: span 6;
+  }
+}
+
+.useful-card {
+  &__picture {
+    display: flex;
+  }
+
+  &__content {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: $grey_light;
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: normal;
+    font-weight: 400;
+    color: $black;
+  }
+
+  &__button {
+    @include btn-secondary;
+    margin-top: auto;
+    padding: 17.4px 31.5px;
+  }
+}
