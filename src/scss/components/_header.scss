@@ -17,9 +17,9 @@ $options: (
 
 .top-container {
   display: flex;
-  align-items: center;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  align-items: flex-start;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: $grey_light;
 }
 
@@ -87,7 +87,7 @@ $topNavLinkOptions: (
 
 .middle-container {
   padding-top: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 30px;
   display: flex;
   align-items: center;
 }
@@ -144,7 +144,7 @@ $navLinkOptions: (
 .bottom {
   display: flex;
   align-items: center;
-  padding-bottom: 32px;
+  padding-bottom: 31px;
 }
 
 .search-form {
@@ -161,7 +161,7 @@ $navLinkOptions: (
   &__loupe {
     position: absolute;
     top: 50%;
-    left: 32px;
+    left: 34px;
     transform: translateY(-50%);
     width: 15px;
     height: 15px;
@@ -170,6 +170,8 @@ $navLinkOptions: (
 
   &__input {
     @include base-input;
+    padding-top: 9.2px;
+    padding-bottom: 9.2px;
     padding-left: 59px;
   }
 
@@ -186,7 +188,7 @@ $navLinkOptions: (
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 29.2px;
 
   &__link {
     position: relative;
@@ -261,6 +263,8 @@ $navLinkOptions: (
   align-items: center;
 
   &__count {
+    position: relative;
+    left: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
