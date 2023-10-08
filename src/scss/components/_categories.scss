@@ -19,6 +19,10 @@
     grid-template-columns: repeat(9, 1fr);
   }
 
+  @include tablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   &__item {
     grid-column: span 4;
 
@@ -52,6 +56,10 @@
       @include tablet {
         order: 4;
       }
+
+      @include small-tablet {
+        order: 3;
+      }
     }
 
     &:nth-child(3) {
@@ -63,6 +71,10 @@
     &:nth-child(4) {
       @include tablet {
         order: 3;
+      }
+
+      @include small-tablet {
+        order: 4;
       }
     }
 
@@ -78,6 +90,10 @@
           margin-bottom: 36px;
         }
       }
+
+      @include small-tablet {
+        max-width: 296px;
+      }
     }
   }
 }
@@ -87,6 +103,7 @@
   padding: 28px 0 30px;
   border-radius: 10px;
   background-color: $grey_light;
+  width: 100%;
 
   @include tablet {
     display: flex;
@@ -145,6 +162,12 @@ $topNavLinkOptions: (
   display: flex;
   align-items: center;
   gap: 30px;
+
+  @include tablet {
+    row-gap: 0;
+    flex-wrap: wrap;
+    padding-right: 30px;
+  }
 
   &__link {
     @include link($topNavLinkOptions);

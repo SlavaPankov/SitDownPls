@@ -19,6 +19,10 @@
     grid-template-columns: repeat(9, 1fr);
   }
 
+  @include small-tablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   &__item {
     grid-area: span 1 / span 3;
 

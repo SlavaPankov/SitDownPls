@@ -19,6 +19,10 @@
     grid-template-columns: repeat(9, 1fr);
   }
 
+  @include small-tablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   &__item {
     grid-column: span 3;
 
@@ -46,6 +50,12 @@
         }
       }
     }
+
+    &:nth-child(n+3) {
+      @include small-tablet {
+        display: none;
+      }
+    }
   }
 }
 
@@ -62,6 +72,10 @@
 
   @include tablet {
     padding: 63px 21px 30px;
+  }
+
+  @include small-tablet {
+    padding-top: 70px;
   }
 
   &__label {
@@ -134,7 +148,14 @@
     margin-bottom: 21px;
 
     @include tablet {
+      gap: 0;
       padding: 0 9px;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @include small-tablet {
+      max-width: 223px;
     }
   }
 

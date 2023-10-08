@@ -88,6 +88,11 @@ a {
     padding: 0 $container-offset-tablet;
     max-width: $container-width-tablet;
   }
+
+  @include small-tablet {
+    padding: 0 $container-offset-smtablet;
+    max-width: $container-width-smtablet;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

@@ -19,14 +19,22 @@
     grid-template-columns: repeat(9, 1fr);
   }
 
+  @include small-tablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   &__item {
     grid-column: span 6;
 
-    &:nth-child(3n+1) {
+    &:nth-child(n+3) {
       display: none;
 
       @include tablet {
         display: block;
+      }
+
+      @include small-tablet {
+        display: none;
       }
     }
 

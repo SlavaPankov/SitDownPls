@@ -5,6 +5,11 @@
     background: url("../../img/banner-tablet.jpg") center center no-repeat transparent;
   }
 
+  @include small-tablet {
+    background: url("../../img/banner-sm.jpg") center center no-repeat transparent;
+    background-size: cover;
+  }
+
   &__container {
     padding-top: 80px;
     padding-bottom: 80px;

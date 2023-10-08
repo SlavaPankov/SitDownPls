@@ -7,6 +7,11 @@
     @include tablet {
       background: url("../../img/callback-bg-tablet.webp") right 38px top 111px no-repeat transparent;
     }
+
+    @include small-tablet {
+      background: url("../../img/callback-bg-sm.webp") right 72px top 48px no-repeat transparent;
+      background-size: 187px 444px;
+    }
   }
 
   &__heading {

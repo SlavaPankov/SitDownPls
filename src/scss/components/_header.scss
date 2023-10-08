@@ -42,8 +42,14 @@ $options: (
   &-tablet {
     padding-top: 11px;
     padding-bottom: 11px;
+
     @include tablet {
       align-items: center;
+    }
+
+    @include small-tablet {
+      padding-top: 16px;
+      padding-bottom: 16px;
     }
   }
 }
@@ -107,6 +113,10 @@ $topNavLinkOptions: (
       display: block;
       margin-left: 0;
     }
+
+    @include small-tablet {
+      max-width: 100%;
+    }
   }
 
   &__list {
@@ -129,6 +139,12 @@ $topNavLinkOptions: (
 
   @include tablet {
     padding-bottom: 33px;
+  }
+
+  @include small-tablet {
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 32px 68px 37px;
   }
 }
 
@@ -166,6 +182,10 @@ $navLinkOptions: (
 
   &__link {
     @include link($navLinkOptions);
+
+    @include small-tablet {
+      font-size: 14px;
+    }
   }
 }
 
@@ -173,6 +193,13 @@ $navLinkOptions: (
   display: flex;
   align-items: center;
   padding-bottom: 31px;
+
+  &__container {
+    @include small-tablet {
+      padding-left: 68px;
+      padding-right: 68px;
+    }
+  }
 }
 
 .search-form {
@@ -183,6 +210,11 @@ $navLinkOptions: (
 
   @include tablet {
     max-width: 733px;
+  }
+
+  @include small-tablet {
+    max-width: 100%;
+    margin-right: 0;
   }
 
   &__label {
@@ -230,6 +262,20 @@ $navLinkOptions: (
   &_tablet {
     @include tablet {
       display: flex;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  &_smtablet {
+    display: none;
+
+    @include small-tablet {
+      display: flex;
+      margin-left: auto;
+      padding-right: 4px;
     }
   }
 

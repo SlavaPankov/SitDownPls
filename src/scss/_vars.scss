@@ -2,10 +2,13 @@
 $font-family: "Open Sans", sans-serif;
 $content-width: 1280px;
 $content-width-tablet: 952px;
+$content-width-smtablet: calc(100% - 72px * 2);
 $container-offset: 15px;
 $container-offset-tablet: 36px;
+$container-offset-smtablet: 72px;
 $container-width: calc($content-width + $container-offset * 2);
 $container-width-tablet: calc($content-width-tablet + $container-offset-tablet * 2);
+$container-width-smtablet: calc($content-width-smtablet + $container-offset-smtablet * 2);
 
 // colors
 $primary: #a65cf0;

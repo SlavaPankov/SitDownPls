@@ -48,6 +48,11 @@
     display: flex;
     padding-top: 24px;
     padding-bottom: 24px;
+
+    @include small-tablet {
+      flex-direction: column;
+      padding-right: 73px;
+    }
   }
 
   &__left {
@@ -55,8 +60,21 @@
     flex-direction: column;
     margin-right: 32px;
 
+    @include small-tablet {
+      max-width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+
     & .logo {
       margin-bottom: 31px;
+
+      @include small-tablet {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -73,6 +91,10 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @include small-tablet {
+    margin-right: 50px;
+  }
 
   &__link {
     display: flex;
