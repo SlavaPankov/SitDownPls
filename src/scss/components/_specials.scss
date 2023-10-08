@@ -15,6 +15,10 @@
   grid-template-columns: repeat(12, 1fr);
   gap: 32px;
 
+  @include tablet {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
   &__item {
     grid-column: span 3;
 
@@ -22,7 +26,24 @@
       grid-column: span 6;
 
       & .special-card {
+        &__picture-link {
+          @include tablet {
+            margin-bottom: 50px;
+          }
+        }
+      }
+
+      @include tablet {
+        grid-column: span 3;
+      }
+
+      & .special-card {
         background: url("../../img/specials-bg.webp") right 30px bottom 30px no-repeat $grey_light;
+
+        @include tablet {
+          background: none;
+          background-color: $grey_light ;
+        }
       }
     }
   }
@@ -38,6 +59,10 @@
   align-items: flex-start;
   border-radius: 10px;
   background-color: $grey_light;
+
+  @include tablet {
+    padding: 63px 21px 30px;
+  }
 
   &__label {
     position: absolute;
@@ -88,6 +113,11 @@
     max-width: 225px;
     width: 100%;
     margin-bottom: 19px;
+
+    @include tablet {
+      max-width: 100%;
+      padding: 0 9px;
+    }
   }
 
   &__link {
@@ -102,6 +132,10 @@
     align-items: center;
     gap: 30px;
     margin-bottom: 21px;
+
+    @include tablet {
+      padding: 0 9px;
+    }
   }
 
   &__price {
@@ -133,5 +167,13 @@
     @include btn-secondary;
     padding-left: 32px;
     padding-right: 32px;
+
+    @include tablet {
+      margin: 0 9px;
+    }
+  }
+
+  &__number {
+    display: block;
   }
 }

@@ -1,6 +1,19 @@
 .header {
   &__top {
     background-color: $grey_light;
+
+    @include tablet {
+      background-color: $white;
+    }
+
+    &_tablet {
+      display: none;
+
+      @include tablet {
+        display: block;
+        background-color: $grey_light;
+      }
+    }
   }
 }
 
@@ -20,7 +33,19 @@ $options: (
   align-items: flex-start;
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: $grey_light;
+
+  @include tablet {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  &-tablet {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    @include tablet {
+      align-items: center;
+    }
+  }
 }
 
 .phone-link {
@@ -73,6 +98,17 @@ $topNavLinkOptions: (
   width: 100%;
   margin-left: auto;
 
+  @include tablet {
+    display: none;
+  }
+
+  &_tablet {
+    @include tablet {
+      display: block;
+      margin-left: 0;
+    }
+  }
+
   &__list {
     width: 100%;
     display: flex;
@@ -90,6 +126,16 @@ $topNavLinkOptions: (
   padding-bottom: 30px;
   display: flex;
   align-items: center;
+
+  @include tablet {
+    padding-bottom: 33px;
+  }
+}
+
+.middle {
+  &__logo {
+    margin-right: 30px;
+  }
 }
 
 $navLinkOptions: (
@@ -107,6 +153,10 @@ $navLinkOptions: (
   margin-left: auto;
   max-width: 952px;
   width: 100%;
+
+  @include tablet {
+    max-width: 701px;
+  }
 
   &__list {
     display: flex;
@@ -129,6 +179,11 @@ $navLinkOptions: (
   max-width: 1061px;
   width: 100%;
   position: relative;
+  margin-right: 30px;
+
+  @include tablet {
+    max-width: 733px;
+  }
 
   &__label {
     display: block;
@@ -167,6 +222,16 @@ $navLinkOptions: (
   display: flex;
   align-items: center;
   gap: 29.2px;
+
+  @include tablet {
+    display: none;
+  }
+
+  &_tablet {
+    @include tablet {
+      display: flex;
+    }
+  }
 
   &__link {
     position: relative;

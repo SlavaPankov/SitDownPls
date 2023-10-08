@@ -1,6 +1,10 @@
 .commercial {
   background: url('../../img/commercial-bg.jpg') center center no-repeat transparent;
 
+  @include tablet {
+    background: url('../../img/commercial-bg-tablet.jpg') center center no-repeat transparent;
+  }
+
   &__container {
     padding-top: 154px;
     padding-bottom: 150px;

@@ -15,23 +15,85 @@
   grid-template-columns: repeat(12, 1fr);
   gap: 32px;
 
+  @include tablet {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
   &__item {
     grid-column: span 4;
 
+    @include tablet {
+      grid-column: span 3;
+    }
+
     &:nth-child(5n + 1) {
       grid-column: span 6;
+
+      @include tablet {
+        grid-column: span 6;
+      }
     }
 
     &:nth-child(5n + 2) {
       grid-column: span 6;
+
+      @include tablet {
+        grid-column: span 3;
+      }
+    }
+
+    &:first-child {
+      @include tablet {
+        order: 1;
+      }
+    }
+
+    &:nth-child(2) {
+      @include tablet {
+        order: 4;
+      }
+    }
+
+    &:nth-child(3) {
+      @include tablet {
+        order: 2;
+      }
+    }
+
+    &:nth-child(4) {
+      @include tablet {
+        order: 3;
+      }
+    }
+
+    &:nth-child(5) {
+      @include tablet {
+        order: 5;
+      }
+    }
+
+    &:not(:first-child) {
+      & .category-card {
+        &__heading {
+          margin-bottom: 36px;
+        }
+      }
     }
   }
 }
 
 .category-card {
+  height: 100%;
   padding: 28px 0 30px;
   border-radius: 10px;
   background-color: $grey_light;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    min-height: 511px;
+    padding: 27px 0 30px;
+  }
 
   &__heading {
     padding-left: 30px;
@@ -48,11 +110,21 @@
   &__picture-link {
     display: flex;
     margin-bottom: 26px;
+
+    @include tablet {
+      & picture {
+        display: flex;
+      }
+    }
   }
 
   &__button {
     padding-left: 30px;
-    @include link-round
+    @include link-round;
+
+    @include tablet {
+      margin-top: auto;
+    }
   }
 }
 

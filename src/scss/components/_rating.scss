@@ -15,8 +15,16 @@
   grid-template-columns: repeat(12, 1fr);
   gap: 32px;
 
+  @include tablet {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
   &__item {
     grid-area: span 1 / span 3;
+
+    &:nth-child(n+7) {
+      display: none;
+    }
   }
 }
 

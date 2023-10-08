@@ -83,6 +83,11 @@ a {
   margin: 0 auto;
   padding: 0 $container-offset;
   max-width: $container-width;
+
+  @include tablet {
+    padding: 0 $container-offset-tablet;
+    max-width: $container-width-tablet;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

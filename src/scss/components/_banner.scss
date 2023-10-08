@@ -1,6 +1,10 @@
 .banner {
   background: url("../../img/banner.jpg") center center no-repeat transparent;
 
+  @include tablet {
+    background: url("../../img/banner-tablet.jpg") center center no-repeat transparent;
+  }
+
   &__container {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -17,5 +21,9 @@
 
   &__button {
     @include btn-primary;
+
+    @include tablet {
+      padding: 20.4px 49px;
+    }
   }
 }
