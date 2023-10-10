@@ -23,6 +23,11 @@
     grid-template-columns: repeat(6, 1fr);
   }
 
+  @include mobile {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 24px;
+  }
+
   &__item {
     grid-column: span 6;
 
@@ -36,10 +41,18 @@
       @include small-tablet {
         display: none;
       }
+
+      @include mobile {
+        display: block;
+      }
     }
 
     @include tablet {
       grid-column: span 3;
+    }
+
+    @include mobile {
+      grid-column: auto;
     }
   }
 }

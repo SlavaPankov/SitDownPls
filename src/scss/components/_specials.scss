@@ -23,8 +23,17 @@
     grid-template-columns: repeat(6, 1fr);
   }
 
+  @include mobile {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    gap: 24px;
+  }
+
   &__item {
     grid-column: span 3;
+
+    @include mobile {
+      grid-column: auto;
+    }
 
     &:nth-child(2) {
       grid-column: span 6;
@@ -34,11 +43,19 @@
           @include tablet {
             margin-bottom: 50px;
           }
+
+          @include mobile {
+            margin-bottom: 11px;
+          }
         }
       }
 
       @include tablet {
         grid-column: span 3;
+      }
+
+      @include mobile {
+        grid-column: auto;
       }
 
       & .special-card {
@@ -51,9 +68,31 @@
       }
     }
 
+    &:nth-child(5) {
+      & .special-card {
+        &__picture-link {
+          @include mobile {
+            margin-bottom: 11px;
+          }
+        }
+      }
+    }
+
     &:nth-child(n+3) {
       @include small-tablet {
         display: none;
+      }
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    &:nth-child(n+4) {
+      display: none;
+
+      @include mobile {
+        display: block;
       }
     }
   }
@@ -76,6 +115,10 @@
 
   @include small-tablet {
     padding-top: 70px;
+  }
+
+  @include mobile {
+    height: 511px;
   }
 
   &__label {
@@ -116,6 +159,13 @@
     width: 100%;
     display: block;
     margin-bottom: 20px;
+
+    @include mobile {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__picture {
@@ -156,6 +206,13 @@
 
     @include small-tablet {
       max-width: 223px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      justify-content: flex-start;
+      gap: 30px;
+      margin-bottom: 23px;
     }
   }
 

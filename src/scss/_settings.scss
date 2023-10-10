@@ -93,6 +93,11 @@ a {
     padding: 0 $container-offset-smtablet;
     max-width: $container-width-smtablet;
   }
+
+  @include mobile {
+    padding: 0 $container-offset-mobile;
+    max-width: $container-width-mobile;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

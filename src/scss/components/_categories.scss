@@ -10,6 +10,140 @@
   }
 }
 
+.category-card {
+  height: 100%;
+  padding: 28px 0 30px;
+  border-radius: 10px;
+  background-color: $grey_light;
+  width: 100%;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    min-height: 511px;
+    padding: 27px 0 30px;
+  }
+
+  @include mobile {
+    min-height: auto;
+    padding-bottom: 16px;
+    padding-top:16px;
+  }
+
+  &__heading {
+    padding-left: 30px;
+    margin-bottom: 30px;
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-left: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    font-size: 24px;
+    line-height: normal;
+    font-weight: 400;
+    color: $black;
+
+    @include mobile {
+      max-width: 76px;
+      font-size: 16px;
+    }
+  }
+
+  &__heading-button {
+    @include btn-round;
+    display: none;
+
+    @include mobile {
+      display: block;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__picture-link {
+    display: flex;
+    margin-bottom: 26px;
+
+    @include tablet {
+      & picture {
+        display: flex;
+      }
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    padding-left: 30px;
+    @include link-round;
+
+    @include tablet {
+      margin-top: auto;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+$topNavLinkOptions: (
+  fontSize: 14px,
+  textColor: $grey,
+  backgroundLeft: 10px,
+  backgroundTop: 1px,
+  hoverColor: $primary,
+  focusColor: $primary_shade,
+  afterColor: $pink_violet,
+  activeColor: $primary_shade,
+);
+
+.subcategories {
+  margin-bottom: 14px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @include tablet {
+    row-gap: 0;
+    flex-wrap: wrap;
+    padding-right: 30px;
+  }
+
+  @include mobile {
+    margin-bottom: 9px;
+    padding-right: 16px;
+    padding-left: 16px;
+    row-gap: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__link {
+    @include link($topNavLinkOptions);
+
+    @include mobile {
+      font-size: 10px;
+      line-height: 100%;
+    }
+  }
+
+  &__item {
+    @include mobile {
+      display: flex;
+    }
+  }
+}
+
 .categories-list {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -21,6 +155,11 @@
 
   @include tablet {
     grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include mobile {
+    column-gap: 16px;
+    row-gap: 32px;
   }
 
   &__item {
@@ -50,6 +189,39 @@
       @include tablet {
         order: 1;
       }
+
+      & .category-card {
+        padding-top: 30px;
+
+        & .subcategories {
+          @include mobile {
+            padding-left: 30px;
+            gap: 20px;
+            flex-direction: row;
+            margin-bottom: 15px;
+          }
+
+          &__link {
+            @include mobile {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &__heading {
+          @include mobile {
+            padding-left: 30px;
+            margin-bottom: 12px;
+          }
+        }
+
+        &__link {
+          @include mobile {
+            max-width: 100%;
+            font-size: 24px;
+          }
+        }
+      }
     }
 
     &:nth-child(2) {
@@ -68,16 +240,6 @@
       }
     }
 
-    &:nth-child(4) {
-      @include tablet {
-        order: 3;
-      }
-
-      @include small-tablet {
-        order: 4;
-      }
-    }
-
     &:nth-child(5) {
       @include tablet {
         order: 5;
@@ -88,6 +250,10 @@
       & .category-card {
         &__heading {
           margin-bottom: 36px;
+
+          @include mobile {
+            margin-bottom: 14px;
+          }
         }
       }
 
@@ -95,81 +261,39 @@
         max-width: 296px;
       }
     }
-  }
-}
 
-.category-card {
-  height: 100%;
-  padding: 28px 0 30px;
-  border-radius: 10px;
-  background-color: $grey_light;
-  width: 100%;
+    &:nth-child(4) {
+      @include tablet {
+        order: 3;
+      }
 
-  @include tablet {
-    display: flex;
-    flex-direction: column;
-    min-height: 511px;
-    padding: 27px 0 30px;
-  }
+      @include small-tablet {
+        order: 4;
+      }
 
-  &__heading {
-    padding-left: 30px;
-    margin-bottom: 30px;
-  }
+      & .category-card {
+        padding-top: 19px;
 
-  &__link {
-    font-size: 24px;
-    line-height: normal;
-    font-weight: 400;
-    color: $black;
-  }
+        &__heading {
+          @include mobile {
+            align-items: flex-end;
+            margin-bottom: 18px;
+          }
+        }
 
-  &__picture-link {
-    display: flex;
-    margin-bottom: 26px;
+        &__link {
+          @include mobile {
+            line-height: 104%;
+          }
+        }
 
-    @include tablet {
-      & picture {
-        display: flex;
+        &__heading-button {
+          @include mobile {
+            position: relative;
+            transform: translateY(5px);
+          }
+        }
       }
     }
-  }
-
-  &__button {
-    padding-left: 30px;
-    @include link-round;
-
-    @include tablet {
-      margin-top: auto;
-    }
-  }
-}
-
-$topNavLinkOptions: (
-  fontSize: 14px,
-  textColor: $grey,
-  backgroundLeft: 10px,
-  backgroundTop: 1px,
-  hoverColor: $primary,
-  focusColor: $primary_shade,
-  afterColor: $pink_violet,
-  activeColor: $primary_shade,
-);
-
-.subcategories {
-  margin-bottom: 14px;
-  padding-left: 30px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-
-  @include tablet {
-    row-gap: 0;
-    flex-wrap: wrap;
-    padding-right: 30px;
-  }
-
-  &__link {
-    @include link($topNavLinkOptions);
   }
 }

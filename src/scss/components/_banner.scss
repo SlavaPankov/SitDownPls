@@ -10,9 +10,20 @@
     background-size: cover;
   }
 
+  @include mobile {
+    background: url("../../img/banner-m.jpg") center center no-repeat transparent;
+    background-size: contain;
+    background-position: center top;
+  }
+
   &__container {
     padding-top: 80px;
     padding-bottom: 80px;
+
+    @include mobile {
+      padding-top: 30px;
+      padding-bottom: 0;
+    }
   }
 
   &__heading {
@@ -22,6 +33,20 @@
     line-height: normal;
     font-weight: 700;
     color: $grey;
+
+    @include mobile {
+      font-size: 6.25vw;
+      max-width: 100%;
+      margin-bottom: 49vw;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    & span {
+      @include mobile {
+        display: block;
+      }
+    }
   }
 
   &__button {
@@ -29,6 +54,10 @@
 
     @include tablet {
       padding: 20.4px 49px;
+    }
+
+    @include mobile {
+      width: 100%;
     }
   }
 }

@@ -6,12 +6,20 @@
       background-color: $white;
     }
 
+    @include mobile {
+      background-color: $grey_light;
+    }
+
     &_tablet {
       display: none;
 
       @include tablet {
         display: block;
         background-color: $grey_light;
+      }
+
+      @include mobile {
+        display: none;
       }
     }
   }
@@ -39,6 +47,12 @@ $options: (
     padding-bottom: 18px;
   }
 
+  @include mobile {
+    padding-top: 12px;
+    padding-bottom: 11px;
+    justify-content: center;
+  }
+
   &-tablet {
     padding-top: 11px;
     padding-bottom: 11px;
@@ -56,6 +70,18 @@ $options: (
 
 .phone-link {
   @include link($options);
+
+  @include mobile {
+    display: none;
+  }
+
+  &_mobile {
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
 
   & span {
     display: flex;
@@ -146,11 +172,47 @@ $topNavLinkOptions: (
     gap: 32px;
     padding: 32px 68px 37px;
   }
+
+  @include mobile {
+    margin-top: 16px;
+    padding: 11px 0 1px 12px;
+    border-top: 1px solid $grey_light;
+    gap: 27px;
+  }
 }
 
 .middle {
+  position: relative;
+
   &__logo {
     margin-right: 30px;
+
+    @include mobile {
+      display: none;
+    }
+
+    &_mobile {
+      display: none;
+
+      @include mobile {
+        display: flex;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: $grey_light;
+
+    @include mobile {
+      height: 1px;
+    }
   }
 }
 
@@ -174,10 +236,23 @@ $navLinkOptions: (
     max-width: 701px;
   }
 
+  @include mobile {
+    max-width: 100%;
+  }
+
   &__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mobile {
+      overflow-x: auto;
+      gap: 30px;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
   }
 
   &__link {
@@ -185,6 +260,10 @@ $navLinkOptions: (
 
     @include small-tablet {
       font-size: 14px;
+    }
+
+    @include mobile {
+      white-space: nowrap;
     }
   }
 }
@@ -198,6 +277,11 @@ $navLinkOptions: (
     @include small-tablet {
       padding-left: 68px;
       padding-right: 68px;
+    }
+
+    @include mobile {
+      padding-left: 12px;
+      padding-right: 12px;
     }
   }
 }
@@ -276,6 +360,10 @@ $navLinkOptions: (
       display: flex;
       margin-left: auto;
       padding-right: 4px;
+    }
+
+    @include mobile {
+      padding-right: 12px;
     }
   }
 

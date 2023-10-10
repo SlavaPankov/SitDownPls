@@ -12,6 +12,10 @@
       background: url("../../img/callback-bg-sm.webp") right 72px top 48px no-repeat transparent;
       background-size: 187px 444px;
     }
+
+    @include mobile {
+      background: none
+    }
   }
 
   &__heading {
@@ -46,6 +50,10 @@
     max-width: 405px;
   }
 
+  @include mobile {
+    max-width: 100%;
+  }
+
   &__label {
     width: 100%;
     margin-bottom: 28px;
@@ -68,6 +76,10 @@
     font-weight: 400;
     color: $primary;
     text-decoration: underline;
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }
 
@@ -77,4 +89,14 @@
   line-height: normal;
   font-weight: 400;
   color: $black;
+
+  @include mobile {
+    font-size: 12px;
+  }
+
+  &__content {
+    @include mobile {
+      padding-left: 20px;
+    }
+  }
 }

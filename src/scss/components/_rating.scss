@@ -23,11 +23,32 @@
     grid-template-columns: repeat(6, 1fr);
   }
 
+  @include mobile {
+    grid-template-columns: repeat(auto-fit, minmax(calc((100% - 24px - 16px) / 2), 1fr));
+    gap: 16px;
+  }
+
   &__item {
     grid-area: span 1 / span 3;
 
+    @include mobile{
+      grid-area: auto;
+    }
+
     &:nth-child(n+7) {
-      display: none;
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &:nth-child(1) {
+      & .card {
+        &__picture-link {
+          @include mobile {
+            margin-bottom: 16px;
+          }
+        }
+      }
     }
   }
 }
@@ -43,6 +64,11 @@
   background-color: $grey_light;
   border-radius: 10px;
 
+  @include mobile {
+    padding: 0 0 16px;
+    min-height: 278px;
+  }
+
   &__rating {
     position: absolute;
     top: 31px;
@@ -54,12 +80,23 @@
     line-height: 130%;
     font-weight: 400;
     color: $secondary;
+
+    @include mobile {
+      top: 16px;
+      left: 16px;
+      font-size: 12px;
+    }
   }
 
   &__icon {
     width: 15px;
     height: 15px;
     fill: $secondary;
+
+    @include mobile {
+      width: 12px;
+      height: 12px;
+    }
   }
 
   &__picture-link {
@@ -67,6 +104,11 @@
     justify-content: center;
     width: 100%;
     margin-bottom: 13px;
+
+    @include mobile {
+      margin-bottom: 10px;
+      padding: 0 16px;
+    }
   }
 
   &__link {
@@ -74,12 +116,22 @@
     line-height: 130%;
     font-weight: 400;
     color: $black;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &__heading {
     padding: 0 15px;
     width: 100%;
     margin-bottom: 21px;
+
+    @include mobile {
+      margin-bottom: 16px;
+      padding: 0 16px;
+      width: 76%;
+    }
   }
 
   &__number {
@@ -93,11 +145,22 @@
     line-height: 130%;
     font-weight: 400;
     color: $grey_shade;
+
+    @include mobile {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
   }
 
   &__button {
     margin-left: 15px;
     @include btn-secondary;
     padding: 17.4px 31.5px;
+
+    @include mobile {
+      padding: 10px 23px;
+      margin-left: 16px;
+      width: calc(100% - 32px);
+    }
   }
 }
