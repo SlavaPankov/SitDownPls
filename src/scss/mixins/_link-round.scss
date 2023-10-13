@@ -36,11 +36,11 @@
       }
     }
 
-    & button {
+    & div {
       background-color: $primary;
 
       &::after {
-        border-color: $white
+        border-color: $white;
       }
     }
   }
@@ -54,8 +54,9 @@
       }
     }
 
-    & button {
+    & div {
       background-color: $primary_light;
+
 
       &::after {
         border-color: $white;
@@ -72,7 +73,7 @@
       }
     }
 
-    & button {
+    & div {
       background-color: $primary_shade;
       border-color: $primary_shade;
 

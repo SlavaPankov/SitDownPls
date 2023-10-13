@@ -1,6 +1,6 @@
 /* stylelint-disable */
 
-@mixin custom-checkbox($awidth: 14px, $aheight: 14px, $bwidth: 14px, $bheight: 14px) {
+@mixin custom-checkbox($awidth: 14px, $aheight: 14px, $bwidth: 14px, $bheight: 14px, $bgwidth: 10px, $bgheight: 10px) {
   position: relative;
 
   &__field {
@@ -37,25 +37,25 @@
       box-sizing: border-box;
       background-image: url("../../img/svg/check.svg");
       background-position: center;
-      background-size: 10px 10px;
+      background-size: #{$bgwidth} #{$bgheight};
       background-repeat: no-repeat;
       background-color: transparent;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
     }
   }
-}
 
-.custom-checkbox__field:checked + .custom-checkbox__content::after {
-  opacity: 1;
-}
+  &__field:checked + &__content::after {
+    opacity: 1;
+  }
 
-.custom-checkbox__field:checked + .custom-checkbox__content::before {
-  border-color: $primary;
-  background-color: $primary;
-}
+  &__field:checked + &__content::before {
+    border-color: $primary;
+    background-color: $primary;
+  }
 
-.custom-checkbox__field:disabled + .custom-checkbox__content {
-  opacity: 0.4;
-  pointer-events: none;
+  &__field:disabled + &__content {
+    opacity: 0.4;
+    pointer-events: none;
+  }
 }

@@ -158,6 +158,10 @@ const scripts = () => {
               ]
             }
           }
+        },
+        {
+          test: /\.css/,
+          use: ['style-loader', 'css-loader']
         }]
       },
       devtool: !isProd ? 'source-map' : false

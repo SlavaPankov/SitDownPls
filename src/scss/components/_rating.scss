@@ -54,6 +54,7 @@
 }
 
 .card {
+  box-sizing: border-box;
   position: relative;
   min-height: 420px;
   display: flex;

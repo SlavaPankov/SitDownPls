@@ -1,10 +1,210 @@
+.catalog-page .bottom-container {
+  padding-bottom: 19px;
+}
+
 .catalog {
   &__container {
-    display: flex;
+    display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 32px;
+    padding-bottom: 70px;
   }
 
   &__heading {
     grid-area: 1 / 4 / 2 / 13;
+    font-size: 24px;
+    line-height: 130%;
+    font-weight: 400;
+    color: $black;
+    margin-bottom: 24px;
   }
+
+  &__content {
+    grid-area: 2 / 4 / 3 / 13;
+  }
+
+  &__commercial {
+    margin-top: auto;
+    margin-bottom: 32px;
+  }
+}
+
+.catalog-left {
+  grid-area: 1 / 1 / 3 / 4;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__heading {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 130%;
+    font-weight: 400;
+    color: $black;
+  }
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 29.5px;
+
+  &__heading {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 130%;
+    font-weight: 400;
+    color: $grey_shade;
+
+    &_prices {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 16px;
+    line-height: 130%;
+    font-weight: 400;
+    color: $grey_shade;
+  }
+
+  &__prices {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  &__input {
+    max-width: 86px;
+    padding: 3.65px 13px;
+    border: 1px solid $grey;
+    border-radius: 2px;
+    font-size: 16px;
+    line-height: 130%;
+    font-weight: 400;
+    color: $grey_shade;
+    transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+
+    &:hover {
+      border-color: $primary;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $pink_violet;
+      border-color: $primary;
+    }
+
+    &:active {
+      background-color: $white;
+      border-color: $primary_shade;
+    }
+  }
+}
+
+.filter-checkbox {
+  @include custom-checkbox(20px, 20px, 20px, 20px, 12px, 12px);
+  font-size: 16px;
+  line-height: 130%;
+  font-weight: 400;
+  color: $grey_shade;
+
+  &__content {
+    padding-left: 32px;
+  }
+}
+
+.catalog-commercial {
+  &__picture {
+    display: flex;
+  }
+
+  &__content {
+    padding: 30px;
+    background-color: $black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  &__heading {
+    font-family: 'PlayFair', 'Open Sans', sans-serif;
+    font-size: 24px;
+    line-height: normal;
+    font-weight: 900;
+    color: $gold;
+  }
+
+  &__subheading {
+    max-width: 199px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    color: $grey;
+  }
+
+  &__button {
+    @include link-round;
+  }
+}
+
+.catalog {
+  &__slider-bullet {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 2px solid $primary;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+    color: $primary;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    &:hover {
+      background-color: $primary;
+      border-color: $primary;
+      color: $white;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $primary_light;
+      color: $white;
+    }
+
+    &:active,
+    &--active {
+      color: $white;
+      background-color: $primary_shade;
+      border-color: $primary_shade;
+    }
+
+  }
+}
+
+.content-swiper {
+  margin-bottom: 32px;
+}
+
+.catalog .catalog-pagination {
+  grid-area: 3 / 4 / 4 / 13;
+  position: relative;
+  bottom: 0 !important;
 }
