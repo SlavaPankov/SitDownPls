@@ -66,6 +66,17 @@ $options: (
       padding-bottom: 16px;
     }
   }
+
+  &__logo {
+    &_mobile {
+      display: none;
+
+      @include mobile {
+        display: flex;
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .phone-link {
@@ -268,21 +279,19 @@ $navLinkOptions: (
   }
 }
 
-.bottom {
+.bottom-container {
   display: flex;
   align-items: center;
   padding-bottom: 31px;
 
-  &__container {
-    @include small-tablet {
-      padding-left: 68px;
-      padding-right: 68px;
-    }
+  @include small-tablet {
+    padding-left: 68px;
+    padding-right: 68px;
+  }
 
-    @include mobile {
-      padding-left: 12px;
-      padding-right: 12px;
-    }
+  @include mobile {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -389,6 +398,7 @@ $navLinkOptions: (
     }
 
     &:hover {
+
       & .person-icon,
       & .cart-icon {
         fill: $primary_light;
