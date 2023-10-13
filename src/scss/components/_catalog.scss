@@ -1,0 +1,10 @@
+.catalog {
+  &__container {
+    display: flex;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__heading {
+    grid-area: 1 / 4 / 2 / 13;
+  }
+}
