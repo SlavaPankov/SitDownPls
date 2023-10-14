@@ -1,0 +1,76 @@
+.similar {
+  &__container {
+    padding-top: 41px;
+    padding-bottom: 68px;
+
+    @include tablet {
+      padding-top: 35px;
+    }
+
+    @include small-tablet {
+      padding-top: 18px;
+      padding-bottom: 70px;
+    }
+
+    @include mobile {
+      padding-top: 36px;
+      padding-bottom: 69px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 22px;
+    font-size: 24px;
+    line-height: 130%;
+    font-weight: 400;
+    color: $black;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.similar-list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+
+  @include tablet {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  @include small-tablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include mobile {
+    gap: 16px;
+  }
+
+  &__item {
+    grid-column: span 3;
+
+    &:last-child {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &:nth-child(3) {
+      @include small-tablet {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      & .card {
+        &__picture-link {
+          @include mobile {
+            margin-bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+}

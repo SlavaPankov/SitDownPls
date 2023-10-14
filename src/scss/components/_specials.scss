@@ -160,6 +160,10 @@
     display: block;
     margin-bottom: 20px;
 
+    &:focus {
+      outline: 2px solid $primary;
+    }
+
     @include mobile {
       height: 100%;
       display: flex;
@@ -189,6 +193,20 @@
     line-height: 130%;
     font-weight: 400;
     color: $black;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:focus {
+      outline: none;
+      color: $primary_light
+    }
+
+    &:active {
+      color: $primary_shade;
+    }
   }
 
   &__prices {
