@@ -1,16 +1,16 @@
 .commercial {
-  background: url('../../img/commercial-bg.jpg') center center no-repeat transparent;
+  background: url('../../img/commercial-bg.webp') center center no-repeat transparent;
 
   @include tablet {
-    background: url('../../img/commercial-bg-tablet.jpg') center center no-repeat transparent;
+    background: url('../../img/commercial-bg-tablet.webp') center center no-repeat transparent;
   }
 
   @include small-tablet {
-    background: url('../../img/commercial-sm.jpg') center center no-repeat transparent;
+    background: url('../../img/commercial-sm.webp') center center no-repeat transparent;
   }
 
   @include mobile {
-    background: url('../../img/commercial-m.jpg') center center no-repeat transparent;
+    background: url('../../img/commercial-m.webp') center center no-repeat transparent;
   }
 
   @include mobile {

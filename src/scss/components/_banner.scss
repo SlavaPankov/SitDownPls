@@ -1,17 +1,17 @@
 .banner {
-  background: url("../../img/banner.jpg") center center no-repeat transparent;
+  background: url("../../img/banner.webp") center center no-repeat transparent;
 
   @include tablet {
-    background: url("../../img/banner-tablet.jpg") center center no-repeat transparent;
+    background: url("../../img/banner-tablet.webp") center center no-repeat transparent;
   }
 
   @include small-tablet {
-    background: url("../../img/banner-sm.jpg") center center no-repeat transparent;
+    background: url("../../img/banner-sm.webp") center center no-repeat transparent;
     background-size: cover;
   }
 
   @include mobile {
-    background: url("../../img/banner-m.jpg") center center no-repeat transparent;
+    background: url("../../img/banner-m.webp") center center no-repeat transparent;
     background-size: contain;
     background-position: center top;
   }

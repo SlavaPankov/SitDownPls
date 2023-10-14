@@ -4,19 +4,46 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 32.5px;
+
+    @include tablet {
+      padding-bottom: 67px;
+      grid-template-columns: repeat(9, 1fr);
+    }
+
+    @include small-tablet {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include mobile {
+      padding-top: 8px;
+      padding-bottom: 70px;
+      gap: 32px;
+    }
   }
 
   &__block {
     grid-column: span 8;
 
+    @include small-tablet {
+      grid-column: span 7;
+    }
+
     &_getting {
       grid-column: span 6;
+
+      @include small-tablet {
+        grid-column: span 7;
+      }
     }
   }
 
   &__heading {
     grid-column: span 8;
     @include h2;
+
+    @include small-tablet {
+      grid-column: span 7;
+    }
   }
 
   &__subheading {
@@ -25,6 +52,19 @@
     font-weight: 400;
     line-height: 33px;
     color: $black;
+
+    @include mobile {
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &_mobile {
+      @include mobile {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
   }
 
   &__text {
@@ -32,6 +72,11 @@
     font-weight: 400;
     line-height: 182%;
     color: $black;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 179%;
+    }
   }
 }
 
@@ -61,6 +106,10 @@
     font-weight: 400;
     line-height: 150%;
     color: $black;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 }
 
@@ -71,11 +120,23 @@
     font-weight: 600;
     line-height: 22px;
     color: $secondary;
+
+    @include mobile {
+      margin-bottom: 12px;
+    }
   }
 
   &__item {
     &:not(:last-child) {
       margin-bottom: 12px;
+    }
+  }
+}
+
+.guarantee {
+  &__heading {
+    @include mobile {
+      margin-bottom: 8px;
     }
   }
 }
@@ -87,18 +148,30 @@
   &__item {
     padding-left: 8px;
 
+    @include mobile {
+      padding-left: 9px;
+    }
+
     &:not(:last-child) {
-      margin-bottom: 12px;
+      margin-bottom: 11px;
     }
 
     &::marker {
       color: $secondary;
+
+      @include mobile {
+        font-size: 16px;
+        line-height: 180%;
+      }
     }
   }
 
   &__text {
     max-width: 810px;
-    // line-height: 183%;
+
+    @include mobile {
+      line-height: 178%;
+    }
   }
 }
 
@@ -108,9 +181,21 @@
   align-items: center;
   gap: 32px;
 
+  @include small-tablet {
+    grid-column: span 7;
+  }
+
+  @include mobile {
+    gap: 16px;
+  }
+
   &__picture {
     display: flex;
     flex: 0 0 auto;
+
+    @include mobile {
+      flex: 1 1 auto;
+    }
   }
 
   &__text {
@@ -119,5 +204,9 @@
     line-height: 150%;
     font-weight: 400;
     color: $black;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 }
