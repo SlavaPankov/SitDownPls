@@ -45,5 +45,10 @@ $breadcrumbsLinkOptions: (
 
   &__link {
     @include link($breadcrumbsLinkOptions);
+
+    &_active {
+      pointer-events: none;
+      color: $primary_shade;
+    }
   }
 }

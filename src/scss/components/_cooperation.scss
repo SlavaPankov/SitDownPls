@@ -1,0 +1,123 @@
+.cooperation {
+  &__container {
+    padding-bottom: 65px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32.5px;
+  }
+
+  &__block {
+    grid-column: span 8;
+
+    &_getting {
+      grid-column: span 6;
+    }
+  }
+
+  &__heading {
+    grid-column: span 8;
+    @include h2;
+  }
+
+  &__subheading {
+    margin-bottom: 11px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+    color: $black;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 182%;
+    color: $black;
+  }
+}
+
+.get-list {
+  &__item {
+    padding-left: 37px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &:first-child {
+      background: url('../../img/network.webp') left top no-repeat transparent;
+    }
+
+    &:nth-child(2) {
+      background: url('../../img/briefcase.webp') left top no-repeat transparent;
+    }
+
+    &:nth-child(3) {
+      background: url('../../img/git-pull-request.webp') left top no-repeat transparent;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $black;
+  }
+}
+
+.opportunity-list {
+  &__heading {
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: $secondary;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.guarantee-list {
+  padding: 0 0 0 17px;
+  margin: 0px;
+
+  &__item {
+    padding-left: 8px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &::marker {
+      color: $secondary;
+    }
+  }
+
+  &__text {
+    max-width: 810px;
+    // line-height: 183%;
+  }
+}
+
+.cooperation-guarantee {
+  grid-column: span 6;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  &__picture {
+    display: flex;
+    flex: 0 0 auto;
+  }
+
+  &__text {
+    max-width: 520px;
+    font-size: 24px;
+    line-height: 150%;
+    font-weight: 400;
+    color: $black;
+  }
+}
