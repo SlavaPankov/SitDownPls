@@ -23,5 +23,35 @@ new Swiper('.content-swiper', {
     renderBullet: function (index, className) {
       return '<span class="' + className + '" tabindex="0">' + (index + 1) + "</span>";
     },
+  },
+
+  breakpoints: {
+    850: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      grid: {
+        rows: 3,
+        fill: 'row',
+      },
+    },
+
+    661: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      grid: {
+        rows: 3,
+        fill: 'row',
+      },
+    },
+
+    320: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 16,
+      grid: {
+        rows: 3,
+        fill: 'row',
+      },
+    }
   }
 });

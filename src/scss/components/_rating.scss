@@ -66,8 +66,13 @@
   border-radius: 10px;
 
   @include mobile {
-    padding: 0 0 16px;
+    padding: 45px 0 16px;
     min-height: 278px;
+    height: 100%;
+  }
+
+  @include small-mobile {
+    padding: 0 0 16px;
   }
 
   &__rating {
